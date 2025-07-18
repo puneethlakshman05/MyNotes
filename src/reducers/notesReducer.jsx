@@ -54,7 +54,38 @@ export const notesReducer =(state,{type,payload})=>{
                 ...state,
                 notes: [...state.notes, state.archive.find(note => note.id === payload)],
                 archive: state.archive.filter(note => note.id !== payload)
-            }
+            };
+            case "REMOVE":
+                return{
+                    ...state,
+                    bin:[...state.bin,state.notes.find(note => note.id===payload)],
+                    notes: state.notes.filter(note => note.id!==payload)
+                }
+                case "DELETE" : 
+                    return{
+                        ...state,
+                        bin : state.bin.filter(note => note.id !== payload)
+                    }
+                    case "ADD_TO_IMPORTANT":
+                        return {
+                            ...state,
+                            important: [...state.important, state.notes.find(note => note.id === payload)],
+                            notes: state.notes.filter(note => note.id !== payload)
+                        }
+                    case "REMOVE_FROM_IMPORTANT":
+                        return {
+                            ...state,
+                            notes: [...state.notes, state.important.find(note => note.id === payload)],
+                            important: state.important.filter(note => note.id !== payload)
+                        }
+    case "CLEAR_ALL":
+        return {
+            ...state,
+            notes: [],
+            archive: [],
+            bin: [],
+            important: []
+        }
 
         default:
             return state;
