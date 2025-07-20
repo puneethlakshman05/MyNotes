@@ -56,7 +56,7 @@ export const NotesCard = ({ id, title, text, isPinned }) => {
             key={id}
         >
             <div className="flex justify-between items-center ">
-                <p className="text-sm xs:text-base sm:text-lg font-semibold truncate">{title}</p>
+                <p className="text-md  sm:text-lg md:text-xl lg:text-xl font-semibold truncate">{title}</p>
                 {!isNotesInArchived && !isNotesInBin && !isNotesInImportant && (
                     <button onClick={() => onPinClick(id)}>
                         <span className={isPinned ? "material-icons" : "material-icons-outlined"}>
@@ -66,7 +66,7 @@ export const NotesCard = ({ id, title, text, isPinned }) => {
                 )}
             </div>
             <div className="flex flex-col p-2 xs:p-3 sm:p-4 max-h-40 ">
-                <p className="text-xs xs:text-sm sm:text-base break-words">{text}</p>
+                <p className="text-md  sm:text-lg md:text-xl lg:text-lg break-words">{text}</p>
                 <div className="flex gap-1 xs:gap-2 sm:gap-3 mt-2 ml-auto mb-0">
                     <button onClick={() => onArchiveClick(id)}>
                         <span className={isNotesInArchived ? "material-icons" : "material-icons-outlined"}>

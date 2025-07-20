@@ -40,13 +40,13 @@ export const Home = () => {
                         <input
                             value={title}
                             onChange={onTitleChange}
-                            className="border border-neutral-800 rounded-t-md focus:outline-none border-b-0 p-1 xs:p-2 text-sm xs:text-base lg:text-lg"
+                            className="border border-neutral-800 rounded-t-md focus:outline-none border-b-0 p-1 xs:p-2 text-base sm:text-base md:text-lg lg:text-lg"
                             placeholder="Enter Title"
                         />
                         <textarea
                             value={text}
                             onChange={onTextChange}
-                            className="border border-neutral-800 rounded-b-md focus:outline-none border-t-0 p-1 xs:p-2 h-20 xs:h-24 text-sm xs:text-base lg:text-lg"
+                            className="border border-neutral-800 rounded-b-md focus:outline-none border-t-0 p-1 xs:p-2 h-20 xs:h-24 text-base sm:text-base md:text-lg lg:text-lg"
                             placeholder="Enter Text"
                         />
                         <button
