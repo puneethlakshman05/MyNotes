@@ -5,7 +5,7 @@ export const Sidebar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     const getStyles = ({ isActive }) => {
-        const styles = 'flex items-center gap-1 sm:gap-2 px-2 sm:px-3 py-1 sm:py-2 rounded-tr-full rounded-br-full text-current transition-colors';
+        const styles = 'flex items-center gap-1 sm:gap-2 px-2 sm:px-3 py-1 sm:py-2 rounded-tr-full rounded-br-full text-current transition-colors text-base sm:text-base md:text-lg lg:text-lg';
         return isActive
             ? `bg-rose-500 text-white ${styles}`
             : `hover:bg-rose-500 hover:text-white ${styles}`;
@@ -20,7 +20,7 @@ export const Sidebar = () => {
                 <span className="material-icons-outlined">{isOpen ? 'close' : 'menu'}</span>
             </button>
             <aside
-                className={`flex flex-col gap-2 sm:gap-3 border-r-4 border-gray-200 w-32 sm:w-40 md:w-48 h-screen p-2 bg-slate-50 fixed left-0 top-12 sm:top-14  md:top-16 transition-transform duration-300 ${
+                className={`flex flex-col gap-2 sm:gap-3 border-r-4 border-gray-200 w-35 sm:w-40 md:w-48 h-screen p-2 bg-slate-50 fixed left-0 top-12 sm:top-14  md:top-16 transition-transform duration-300 ${
                     isOpen ? 'translate-x-0 ' : '-translate-x-full sm:translate-x-0'
                 } overflow-y-auto z-10`}
             >
